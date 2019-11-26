@@ -17,7 +17,7 @@ Thus being able to separate codes referring to screens and services used and etc
 
 3. Select an android emulator:
 
-    '$ Flutter emulators —-launch Nexus_5X_API_27 (emulated name)'
+    '$ flutter emulators —-launch Nexus_5X_API_27 (emulated name)'
 
 4. After android emulator is running:
 
