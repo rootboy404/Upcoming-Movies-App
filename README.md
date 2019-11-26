@@ -2,12 +2,12 @@
 
 It is a mobile Multiplatform application developed with Flutter, with the purpose of displaying upcoming movies to be released by accessing the API The Api Movie Database (https://developers.themoviedb.org/).
 
-## About the architecture
+### About the architecture
 
 It has been separated into component packages making organization in code much more intuitive. Always focused on reusing created components.
 Thus being able to separate codes referring to screens and services used and etc.
 
-## To run the project
+### To run the project
 
 1. run the project you need to install sdk flutter on your machine (https://flutter.dev/)
 
@@ -23,7 +23,7 @@ Thus being able to separate codes referring to screens and services used and etc
 
     '$ flutter run'
 
-## Libraries and dependencies used
+### Libraries and dependencies used
 
 - **http: ^0.12.0+2:**
 A composable, Future-based library for making HTTP requests.
@@ -41,7 +41,7 @@ A customizable pagination package for Flutter. This package can be used to fetch
 It was used to dynamically paginate the movie list in the movie list component always requesting the next page of the list.
 https://pub.dev/packages/flutter_paginator
 
-## Screenshots
+### Screenshots
 
 - [Movie List](screenshots/lista.jpeg)
 - [Movie Detail 1](screenshots/detalhe1.jpeg)
