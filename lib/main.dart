@@ -9,9 +9,7 @@ class UpcomingMoviesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home: UpcomingMoviesList(),
-      );
+      home: UpcomingMoviesList(),
+    );
   }
 }
-
-

@@ -11,7 +11,6 @@ class MovieList extends StatefulWidget {
 }
 
 class _MovieListState extends State<MovieList> {
-
   MovieService movieService = MovieService();
   GlobalKey<PaginatorState> paginatorGlobalKey = GlobalKey();
 
@@ -77,13 +76,10 @@ class _MovieListState extends State<MovieList> {
   }
 
   int totalPagesGetter(MovieListData movieListData) {
-
     return movieListData.total;
   }
 
   bool pageErrorChecker(MovieListData movieListData) {
     return movieListData.statusCode != 200;
   }
-
-
 }

@@ -6,16 +6,16 @@ import 'package:query_params/query_params.dart';
 import 'package:upcomingmovieapp/models/genre.dart';
 import 'package:upcomingmovieapp/constant/constant.dart';
 
-
-class GenreService{
+class GenreService {
 
   Future<List<Genre>> genreList() async {
+
     List<Genre> genres = new List();
 
     URLQueryParams queryParams = new URLQueryParams();
     queryParams.append('api_key', API_KEY_VALUE);
     Response res =
-    await get(GENRE_MOVIE_LIST + queryParams.toString(), headers: {
+        await get(GENRE_MOVIE_LIST + queryParams.toString(), headers: {
       HttpHeaders.contentTypeHeader: 'application/json',
     });
     if (res.statusCode == 200) {
@@ -30,5 +30,4 @@ class GenreService{
       throw 'Unable to load genre list ';
     }
   }
-
 }

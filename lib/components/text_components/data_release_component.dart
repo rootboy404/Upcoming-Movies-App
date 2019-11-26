@@ -8,12 +8,10 @@ class DataReleaseComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Text(
+    return Text(
       _RELEASE_DATA + this._releaseDate,
       style: TextStyle(
-          fontSize: 18.0,
-          fontStyle: FontStyle.italic,
-          color: Colors.grey[800]),
+          fontSize: 18.0, fontStyle: FontStyle.italic, color: Colors.grey[800]),
     );
   }
 }

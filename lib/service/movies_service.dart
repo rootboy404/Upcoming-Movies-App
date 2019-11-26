@@ -15,7 +15,6 @@ class MovieService {
   GenreService genreService = new GenreService();
 
   Future<MovieListData> sendMoviesDataRequest(int page) async {
-    debugPrint(page.toString());
 
     try {
       List<Genre> genreList = await _getGenreList();
@@ -33,23 +32,25 @@ class MovieService {
       var data = jsonDecode(res.body);
       var rest = data['results'] as List;
 
-      if(rest.isNotEmpty){
-        rest.forEach((json){
-
+      if (rest.isNotEmpty) {
+        rest.forEach((json) {
           List<Genre> genreByMovie = List();
           var genreListRestId = json['genre_ids'] as List;
 
-          genreListRestId.forEach((idGenre){
-            genreByMovie.add(genreList.firstWhere((value)=>value.id.toString()==idGenre.toString()));
-
+          genreListRestId.forEach((idGenre) {
+            genreByMovie.add(genreList.firstWhere(
+                (value) => value.id.toString() == idGenre.toString()));
           });
-
 
           movieList.add(Movie.fromJson(json, genreByMovie));
         });
       }
 
-      return MovieListData(movieList: movieList,statusCode:res.statusCode,total: data['total_results'],nItems: movieList.length);
+      return MovieListData(
+          movieList: movieList,
+          statusCode: res.statusCode,
+          total: data['total_results'],
+          nItems: movieList.length);
     } catch (e) {
       if (e is IOException) {
         return MovieListData.withError(
@@ -60,9 +61,6 @@ class MovieService {
       }
     }
   }
-
-
-
 
   Future<List<Genre>> _getGenreList() async {
     return await genreService.genreList().then((lista) {
